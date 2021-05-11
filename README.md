@@ -10,6 +10,23 @@ npm install react-native-pangolin-ad
 
 ## Usage
 
+## 集成
+#### 安卓
+注意gradle版本
+com.android.tools.build:gradle
+
+```
+example/android/build.gradle
+allprojects {
+  repositories {
+    ...其他引用
+     maven {
+            url 'https://artifact.bytedance.com/repository/pangle'
+        }
+  }
+}
+```
+
 ```js
 import PangolinAd from "react-native-pangolin-ad";
 
