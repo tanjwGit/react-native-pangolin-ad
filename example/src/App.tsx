@@ -1,18 +1,27 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import PangolinAd from 'react-native-pangolin-ad';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { showSplashAd } from 'react-native-pangolin-ad';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
 
-  React.useEffect(() => {
-    PangolinAd.multiply(3, 7).then(setResult);
-  }, []);
+
+const showSplash = () => {
+  showSplashAd({
+    ios: '887340170',
+    android: '887340459',
+  }, {
+    splashAdDidLoad: () => {
+      console.log('splashAdDidLoad')
+    }
+  })
+}
 
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
+      <TouchableOpacity onPress={showSplash}><Text>启动屏</Text></TouchableOpacity>
     </View>
   );
 }

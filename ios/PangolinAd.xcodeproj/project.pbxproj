@@ -7,9 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		5E555C0D2413F4C50049A1A2 /* PangolinAd.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* PangolinAd.m */; };
-
+		D4095382264A275F009261E2 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095381264A275F009261E2 /* Accelerate.framework */; };
+		D4095384264A2768009261E2 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095383264A2768009261E2 /* AdSupport.framework */; };
+		D4095386264A2772009261E2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095385264A2772009261E2 /* AudioToolbox.framework */; };
+		D4095388264A277B009261E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095387264A277B009261E2 /* AVFoundation.framework */; };
+		D409538A264A2783009261E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095389264A2783009261E2 /* CoreGraphics.framework */; };
+		D409538C264A278A009261E2 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D409538B264A278A009261E2 /* CoreImage.framework */; };
+		D409538E264A2792009261E2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D409538D264A2792009261E2 /* CoreLocation.framework */; };
+		D4095390264A279B009261E2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D409538F264A279A009261E2 /* CoreMedia.framework */; };
+		D4095392264A27A4009261E2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095391264A27A4009261E2 /* CoreMotion.framework */; };
+		D4095394264A27AB009261E2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095393264A27AB009261E2 /* CoreTelephony.framework */; };
+		D4095396264A27B2009261E2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095395264A27B2009261E2 /* CoreText.framework */; };
+		D4095398264A27B9009261E2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095397264A27B9009261E2 /* ImageIO.framework */; };
+		D409539A264A27C0009261E2 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4095399264A27C0009261E2 /* JavaScriptCore.framework */; };
+		D409539C264A27C7009261E2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D409539B264A27C7009261E2 /* MapKit.framework */; };
+		D409539E264A27CF009261E2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D409539D264A27CF009261E2 /* MediaPlayer.framework */; };
+		D40953A0264A27D9009261E2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D409539F264A27D9009261E2 /* MobileCoreServices.framework */; };
+		D40953A2264A27DF009261E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953A1264A27DF009261E2 /* QuartzCore.framework */; };
+		D40953A4264A27E7009261E2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953A3264A27E7009261E2 /* Security.framework */; };
+		D40953A6264A27EE009261E2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953A5264A27EE009261E2 /* StoreKit.framework */; };
+		D40953A8264A27F7009261E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953A7264A27F7009261E2 /* SystemConfiguration.framework */; };
+		D40953AA264A27FE009261E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953A9264A27FE009261E2 /* UIKit.framework */; };
+		D40953AC264A2807009261E2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953AB264A2806009261E2 /* WebKit.framework */; };
+		D40953AE264A2810009261E2 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953AD264A2810009261E2 /* libbz2.tbd */; };
+		D40953B0264A281F009261E2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953AF264A281F009261E2 /* libc++.tbd */; };
+		D40953B2264A2829009261E2 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953B1264A2829009261E2 /* libiconv.tbd */; };
+		D40953B4264A2831009261E2 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953B3264A2831009261E2 /* libresolv.9.tbd */; };
+		D40953B6264A283B009261E2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953B5264A283B009261E2 /* libsqlite3.tbd */; };
+		D40953B8264A2845009261E2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953B7264A2845009261E2 /* libxml2.tbd */; };
+		D40953BA264A2851009261E2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953B9264A2851009261E2 /* libz.tbd */; };
+		D40953BC264A285C009261E2 /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40953BB264A285C009261E2 /* libc++abi.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,10 +53,38 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libPangolinAd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPangolinAd.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
 		B3E7B5881CC2AC0600A0062D /* PangolinAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PangolinAd.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* PangolinAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PangolinAd.m; sourceTree = "<group>"; };
-
+		D4095381264A275F009261E2 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		D4095383264A2768009261E2 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		D4095385264A2772009261E2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		D4095387264A277B009261E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		D4095389264A2783009261E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		D409538B264A278A009261E2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
+		D409538D264A2792009261E2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		D409538F264A279A009261E2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		D4095391264A27A4009261E2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		D4095393264A27AB009261E2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		D4095395264A27B2009261E2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		D4095397264A27B9009261E2 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		D4095399264A27C0009261E2 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/iOSSupport/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		D409539B264A27C7009261E2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/iOSSupport/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		D409539D264A27CF009261E2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/iOSSupport/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		D409539F264A27D9009261E2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/iOSSupport/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		D40953A1264A27DF009261E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		D40953A3264A27E7009261E2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		D40953A5264A27EE009261E2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/iOSSupport/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		D40953A7264A27F7009261E2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		D40953A9264A27FE009261E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/iOSSupport/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D40953AB264A2806009261E2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/iOSSupport/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		D40953AD264A2810009261E2 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libbz2.tbd; sourceTree = DEVELOPER_DIR; };
+		D40953AF264A281F009261E2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
+		D40953B1264A2829009261E2 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		D40953B3264A2831009261E2 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libresolv.9.tbd; sourceTree = DEVELOPER_DIR; };
+		D40953B5264A283B009261E2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libsqlite3.tbd; sourceTree = DEVELOPER_DIR; };
+		D40953B7264A2845009261E2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libxml2.tbd; sourceTree = DEVELOPER_DIR; };
+		D40953B9264A2851009261E2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		D40953BB264A285C009261E2 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libc++abi.tbd"; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40953BC264A285C009261E2 /* libc++abi.tbd in Frameworks */,
+				D40953BA264A2851009261E2 /* libz.tbd in Frameworks */,
+				D40953B8264A2845009261E2 /* libxml2.tbd in Frameworks */,
+				D40953B6264A283B009261E2 /* libsqlite3.tbd in Frameworks */,
+				D40953B4264A2831009261E2 /* libresolv.9.tbd in Frameworks */,
+				D40953B2264A2829009261E2 /* libiconv.tbd in Frameworks */,
+				D40953B0264A281F009261E2 /* libc++.tbd in Frameworks */,
+				D40953AE264A2810009261E2 /* libbz2.tbd in Frameworks */,
+				D40953AC264A2807009261E2 /* WebKit.framework in Frameworks */,
+				D40953AA264A27FE009261E2 /* UIKit.framework in Frameworks */,
+				D40953A8264A27F7009261E2 /* SystemConfiguration.framework in Frameworks */,
+				D40953A6264A27EE009261E2 /* StoreKit.framework in Frameworks */,
+				D40953A4264A27E7009261E2 /* Security.framework in Frameworks */,
+				D40953A2264A27DF009261E2 /* QuartzCore.framework in Frameworks */,
+				D40953A0264A27D9009261E2 /* MobileCoreServices.framework in Frameworks */,
+				D409539E264A27CF009261E2 /* MediaPlayer.framework in Frameworks */,
+				D409539C264A27C7009261E2 /* MapKit.framework in Frameworks */,
+				D409539A264A27C0009261E2 /* JavaScriptCore.framework in Frameworks */,
+				D4095398264A27B9009261E2 /* ImageIO.framework in Frameworks */,
+				D4095396264A27B2009261E2 /* CoreText.framework in Frameworks */,
+				D4095394264A27AB009261E2 /* CoreTelephony.framework in Frameworks */,
+				D4095392264A27A4009261E2 /* CoreMotion.framework in Frameworks */,
+				D4095390264A279B009261E2 /* CoreMedia.framework in Frameworks */,
+				D409538E264A2792009261E2 /* CoreLocation.framework in Frameworks */,
+				D409538C264A278A009261E2 /* CoreImage.framework in Frameworks */,
+				D409538A264A2783009261E2 /* CoreGraphics.framework in Frameworks */,
+				D4095388264A277B009261E2 /* AVFoundation.framework in Frameworks */,
+				D4095386264A2772009261E2 /* AudioToolbox.framework in Frameworks */,
+				D4095384264A2768009261E2 /* AdSupport.framework in Frameworks */,
+				D4095382264A275F009261E2 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +139,48 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-
 				B3E7B5881CC2AC0600A0062D /* PangolinAd.h */,
 				B3E7B5891CC2AC0600A0062D /* PangolinAd.m */,
-
 				134814211AA4EA7D00B7C361 /* Products */,
+				D4095380264A275F009261E2 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		D4095380264A275F009261E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D40953BB264A285C009261E2 /* libc++abi.tbd */,
+				D40953B9264A2851009261E2 /* libz.tbd */,
+				D40953B7264A2845009261E2 /* libxml2.tbd */,
+				D40953B5264A283B009261E2 /* libsqlite3.tbd */,
+				D40953B3264A2831009261E2 /* libresolv.9.tbd */,
+				D40953B1264A2829009261E2 /* libiconv.tbd */,
+				D40953AF264A281F009261E2 /* libc++.tbd */,
+				D40953AD264A2810009261E2 /* libbz2.tbd */,
+				D40953AB264A2806009261E2 /* WebKit.framework */,
+				D40953A9264A27FE009261E2 /* UIKit.framework */,
+				D40953A7264A27F7009261E2 /* SystemConfiguration.framework */,
+				D40953A5264A27EE009261E2 /* StoreKit.framework */,
+				D40953A3264A27E7009261E2 /* Security.framework */,
+				D40953A1264A27DF009261E2 /* QuartzCore.framework */,
+				D409539F264A27D9009261E2 /* MobileCoreServices.framework */,
+				D409539D264A27CF009261E2 /* MediaPlayer.framework */,
+				D409539B264A27C7009261E2 /* MapKit.framework */,
+				D4095399264A27C0009261E2 /* JavaScriptCore.framework */,
+				D4095397264A27B9009261E2 /* ImageIO.framework */,
+				D4095395264A27B2009261E2 /* CoreText.framework */,
+				D4095393264A27AB009261E2 /* CoreTelephony.framework */,
+				D4095391264A27A4009261E2 /* CoreMotion.framework */,
+				D409538F264A279A009261E2 /* CoreMedia.framework */,
+				D409538D264A2792009261E2 /* CoreLocation.framework */,
+				D409538B264A278A009261E2 /* CoreImage.framework */,
+				D4095389264A2783009261E2 /* CoreGraphics.framework */,
+				D4095387264A277B009261E2 /* AVFoundation.framework */,
+				D4095385264A2772009261E2 /* AudioToolbox.framework */,
+				D4095383264A2768009261E2 /* AdSupport.framework */,
+				D4095381264A275F009261E2 /* Accelerate.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +224,7 @@
 			knownRegions = (
 				English,
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
 			productRefGroup = 58B511D21A9E6C8500147676;
@@ -119,9 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-				B3E7B58A1CC2AC0600A0062D /* PangolinAd.m in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +293,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"c++abi\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -216,6 +342,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"c++abi\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -231,10 +364,15 @@
 					"$(SRCROOT)/../../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++abi\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
 				PRODUCT_NAME = PangolinAd;
 				SKIP_INSTALL = YES;
-
 			};
 			name = Debug;
 		};
@@ -248,10 +386,15 @@
 					"$(SRCROOT)/../../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++abi\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
 				PRODUCT_NAME = PangolinAd;
 				SKIP_INSTALL = YES;
-
 			};
 			name = Release;
 		};
