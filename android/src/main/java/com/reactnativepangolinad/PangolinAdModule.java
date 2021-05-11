@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.app.Activity;
 import com.reactnativepangolinad.activity.SplashActivity;
+import android.content.pm.ApplicationInfo;
 
 @ReactModule(name = PangolinAdModule.NAME)
 public class PangolinAdModule extends ReactContextBaseJavaModule {
@@ -40,16 +41,22 @@ public class PangolinAdModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public static void init(Context context, String appid) {
         TTAdManagerHolder.init(context, appid, true);
-        // promise.resolve(TTAdManagerHolder.sInit);
     }
 
     @ReactMethod
     public void showSplashAd(String codeid) {
+        final Activity context = getCurrentActivity();
+        ApplicationInfo appInfo = context.getApplicationInfo();
+        int resID = context.getResources().getIdentifier("splash_bottom", "drawable", appInfo.packageName);
+        boolean isHalfSize = false;
+        if (resID > 0) {
+            isHalfSize = true;
+        }
         Intent intent = new Intent(reactContext, SplashActivity.class);
         intent.putExtra("splash_rit", codeid);
         intent.putExtra("is_express", false);
-        intent.putExtra("is_half_size", false);
-        final Activity context = getCurrentActivity();
+        intent.putExtra("is_half_size", isHalfSize);
+        intent.putExtra("logo_res_id", resID);
         if (context != null) {
             context.startActivity(intent);
         }

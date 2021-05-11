@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.MainThread;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -20,6 +20,7 @@ import com.reactnativepangolinad.config.TTAdManagerHolder;
 // import com.reactnativepangolinad.utils.SplashClickEyeManager;
 import com.reactnativepangolinad.utils.TToast;
 import com.reactnativepangolinad.R;
+import com.reactnativepangolinad.utils.UIUtils;
 
 
 import java.lang.ref.SoftReference;
@@ -40,6 +41,7 @@ public class SplashActivity extends Activity{
     private boolean mIsExpress = false; //是否请求模板广告
     private boolean mIsHalfSize = false;//是否是半全屏开屏
     private boolean mIsSplashClickEye = false;//是否是开屏点睛
+    private int mSplashBottomLogoResId = 0;//是否有图片
 
     private LinearLayout mSplashHalfSizeLayout;
     private FrameLayout mSplashSplashContainer;
@@ -53,12 +55,16 @@ public class SplashActivity extends Activity{
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash);
+        getExtraInfo();
         mSplashContainer = (FrameLayout) findViewById(R.id.splash_container);
         mSplashHalfSizeLayout = (LinearLayout) findViewById(R.id.splash_half_size_layout);
         mSplashSplashContainer = (FrameLayout) findViewById(R.id.splash_container_half_size);
+        ImageView mSplashBottomLogoImage = (ImageView) findViewById(R.id.splash_half_size_image);
+        if (mSplashBottomLogoResId > 0) {
+            mSplashBottomLogoImage.setImageResource(mSplashBottomLogoResId);
+        }
         //step2:创建TTAdNative对象
         mTTAdNative = TTAdManagerHolder.get().createAdNative(this);
-        getExtraInfo();
         //在合适的时机申请权限，如read_phone_state,防止获取不了imei时候，下载类广告没有填充的问题
         //在开屏时候申请不太合适，因为该页面倒计时结束或者请求超时会跳转，在该页面申请权限，体验不好
         // TTAdManagerHolder.getInstance(this).requestPermissionIfNecessary(this);
@@ -78,6 +84,7 @@ public class SplashActivity extends Activity{
         mIsExpress = intent.getBooleanExtra("is_express", false);
         mIsHalfSize = intent.getBooleanExtra("is_half_size", false);
         mIsSplashClickEye = intent.getBooleanExtra("is_splash_click_eye", false);
+        mSplashBottomLogoResId = intent.getIntExtra("logo_res_id", 0);
     }
 
     @Override
@@ -102,21 +109,21 @@ public class SplashActivity extends Activity{
         // SplashClickEyeManager.getInstance().setSupportSplashClickEye(false);
         //step3:创建开屏广告请求参数AdSlot,具体参数含义参考文档
         AdSlot adSlot = null;
+        int expressViewWidth = (int)UIUtils.getScreenWidthDp(this);
+        int expressViewHeight = (int)UIUtils.getHeight(this);
         if (mIsExpress) {
             //个性化模板广告需要传入期望广告view的宽、高，单位dp，请传入实际需要的大小，
             //比如：广告下方拼接logo、适配刘海屏等，需要考虑实际广告大小
-            //float expressViewWidth = UIUtils.getScreenWidthDp(this);
-            //float expressViewHeight = UIUtils.getHeight(this);
             adSlot = new AdSlot.Builder()
                     .setCodeId(mCodeId)
                     //模板广告需要设置期望个性化模板广告的大小,单位dp,代码位是否属于个性化模板广告，请在穿山甲平台查看
                     //view宽高等于图片的宽高
-                    .setExpressViewAcceptedSize(1080,1920)
+                    .setExpressViewAcceptedSize(expressViewWidth,expressViewHeight)
                     .build();
         } else {
             adSlot = new AdSlot.Builder()
                     .setCodeId(mCodeId)
-                    .setImageAcceptedSize(1080, 1920)
+                    .setImageAcceptedSize(expressViewWidth, expressViewHeight)
                     .build();
         }
 
@@ -125,7 +132,6 @@ public class SplashActivity extends Activity{
             @Override
             @MainThread
             public void onError(int code, String message) {
-                Log.d(TAG, String.valueOf(message));
                 showToast(message);
                 goToMainActivity();
             }
@@ -140,7 +146,7 @@ public class SplashActivity extends Activity{
             @Override
             @MainThread
             public void onSplashAdLoad(TTSplashAd ad) {
-                Log.d(TAG, "开屏广告请求成功");
+                showToast("开屏广告请求成功");
                 if (ad == null) {
                     return;
                 }
@@ -187,19 +193,16 @@ public class SplashActivity extends Activity{
                 ad.setSplashInteractionListener(new TTSplashAd.AdInteractionListener() {
                     @Override
                     public void onAdClicked(View view, int type) {
-                        Log.d(TAG, "onAdClicked");
                         showToast("开屏广告点击");
                     }
 
                     @Override
                     public void onAdShow(View view, int type) {
-                        Log.d(TAG, "onAdShow");
                         showToast("开屏广告展示");
                     }
 
                     @Override
                     public void onAdSkip() {
-                        Log.d(TAG, "onAdSkip");
                         showToast("开屏广告跳过");
                         goToMainActivity();
 
@@ -207,7 +210,6 @@ public class SplashActivity extends Activity{
 
                     @Override
                     public void onAdTimeOver() {
-                        Log.d(TAG, "onAdTimeOver");
                         showToast("开屏广告倒计时结束");
                         goToMainActivity();
                     }
@@ -279,7 +281,7 @@ public class SplashActivity extends Activity{
     }
 
     private void showToast(String msg) {
-        TToast.show(this, msg);
+        // TToast.show(this, msg);
     }
 
     // private void initSplashClickEyeData(TTSplashAd splashAd, View splashView) {

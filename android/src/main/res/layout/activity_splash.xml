@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#000000"
+    android:background="#01000000"
     tools:context="com.reactnativepangolinad.activity.SplashActivity">
 
     <FrameLayout
         android:id="@+id/splash_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000"
+        android:background="#01000000"
        >
     </FrameLayout>
 
@@ -28,16 +28,14 @@
             android:id="@+id/splash_container_half_size"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
-            android:background="#000000" />
+            android:layout_weight="21"
+            android:background="#ffffff" />
 
             <ImageView
                 android:id="@+id/splash_half_size_image"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="@color/tt_draw_btn_back"/>
+                android:layout_weight="4"
+                android:background="#ffffff" />
     </LinearLayout>
-
-
 </LinearLayout>

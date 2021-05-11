@@ -61,7 +61,9 @@ info.plist
 
 ## Usage
 
-开屏广告如需显示logo图，通过xcode将splash_bottom.png文件拖入ios文件夹下
+开屏广告如需显示logo图，
+ios: 通过xcode将splash_bottom.png文件拖入ios文件夹下
+android: splash_bottom.png放入 android/app/src/main/res/drawable/splash_bottom.png文件夹
 
 ### 初始化
 ios: ios/PangolinAdExample/AppDelegate.m文件中
