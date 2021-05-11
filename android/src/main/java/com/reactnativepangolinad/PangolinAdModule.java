@@ -22,6 +22,7 @@ public class PangolinAdModule extends ReactContextBaseJavaModule {
     public PangolinAdModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
+        SplashActivity.mReactContext = reactContext;
     }
 
     @Override

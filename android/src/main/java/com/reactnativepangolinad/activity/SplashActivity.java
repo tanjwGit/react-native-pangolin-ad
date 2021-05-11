@@ -21,8 +21,10 @@ import com.reactnativepangolinad.config.TTAdManagerHolder;
 import com.reactnativepangolinad.utils.TToast;
 import com.reactnativepangolinad.R;
 import com.reactnativepangolinad.utils.UIUtils;
-
-
+import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Arguments;
 import java.lang.ref.SoftReference;
 
 /**
@@ -30,6 +32,7 @@ import java.lang.ref.SoftReference;
  */
 public class SplashActivity extends Activity{
     private static final String TAG = "SplashActivity";
+    public static ReactContext mReactContext;
     private TTAdNative mTTAdNative;
     private FrameLayout mSplashContainer;
     //是否强制跳转到主页面
@@ -132,21 +135,20 @@ public class SplashActivity extends Activity{
             @Override
             @MainThread
             public void onError(int code, String message) {
-                showToast(message);
+                sendEvent("didFailWithError");
                 goToMainActivity();
             }
 
             @Override
             @MainThread
             public void onTimeout() {
-                showToast("开屏广告加载超时");
+                sendEvent("splashAdLoadTimeout");
                 goToMainActivity();
             }
 
             @Override
             @MainThread
             public void onSplashAdLoad(TTSplashAd ad) {
-                showToast("开屏广告请求成功");
                 if (ad == null) {
                     return;
                 }
@@ -193,24 +195,24 @@ public class SplashActivity extends Activity{
                 ad.setSplashInteractionListener(new TTSplashAd.AdInteractionListener() {
                     @Override
                     public void onAdClicked(View view, int type) {
-                        showToast("开屏广告点击");
+                        sendEvent("splashAdDidClick");
                     }
 
                     @Override
                     public void onAdShow(View view, int type) {
-                        showToast("开屏广告展示");
+                        sendEvent("splashAdDidLoad");
                     }
 
                     @Override
                     public void onAdSkip() {
-                        showToast("开屏广告跳过");
+                        sendEvent("splashAdDidClickSkip");
                         goToMainActivity();
 
                     }
 
                     @Override
                     public void onAdTimeOver() {
-                        showToast("开屏广告倒计时结束");
+                        sendEvent("splashAdCountdownToZero");
                         goToMainActivity();
                     }
                 });
@@ -225,32 +227,32 @@ public class SplashActivity extends Activity{
                         @Override
                         public void onDownloadActive(long totalBytes, long currBytes, String fileName, String appName) {
                             if (!hasShow) {
-                                showToast("下载中...");
+                                // showToast("下载中...");
                                 hasShow = true;
                             }
                         }
 
                         @Override
                         public void onDownloadPaused(long totalBytes, long currBytes, String fileName, String appName) {
-                            showToast("下载暂停...");
+                            // showToast("下载暂停...");
 
                         }
 
                         @Override
                         public void onDownloadFailed(long totalBytes, long currBytes, String fileName, String appName) {
-                            showToast("下载失败...");
+                            // showToast("下载失败...");
 
                         }
 
                         @Override
                         public void onDownloadFinished(long totalBytes, String fileName, String appName) {
-                            showToast("下载完成...");
+                            // showToast("下载完成...");
 
                         }
 
                         @Override
                         public void onInstalled(String fileName, String appName) {
-                            showToast("安装完成...");
+                            // showToast("安装完成...");
 
                         }
                     });
@@ -280,8 +282,12 @@ public class SplashActivity extends Activity{
         this.finish();
     }
 
-    private void showToast(String msg) {
-        // TToast.show(this, msg);
+    private void sendEvent(String eventName) {
+         // TToast.show(this, msg);
+        WritableMap params = Arguments.createMap();
+        params.putString("eventType", eventName);
+        mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+            .emit("splashEventReminder", params);
     }
 
     // private void initSplashClickEyeData(TTSplashAd splashAd, View splashView) {
