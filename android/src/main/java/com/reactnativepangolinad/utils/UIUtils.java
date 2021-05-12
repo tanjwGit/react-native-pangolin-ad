@@ -62,8 +62,7 @@ public class UIUtils {
         }
     }
 
-    //获取屏幕真实高度，不包含下方虚拟导航栏
-    public static int getRealHeight(Context context) {
+    public static DisplayMetrics getRealSize(Context context) {
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
         DisplayMetrics dm = new DisplayMetrics();
@@ -72,8 +71,18 @@ public class UIUtils {
         } else {
             display.getMetrics(dm);
         }
+        return dm;
+    }
+    //获取屏幕真实高度，不包含下方虚拟导航栏
+    public static int getRealHeight(Context context) {
+        DisplayMetrics dm = getRealSize(context);
         int realHeight = dm.heightPixels;
         return realHeight;
+    }
+    public static int getRealWidth(Context context) {
+        DisplayMetrics dm = getRealSize(context);
+        int realwidth = dm.widthPixels;
+        return realwidth;
     }
 
     //获取状态栏高度

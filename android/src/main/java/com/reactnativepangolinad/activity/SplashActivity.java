@@ -112,8 +112,9 @@ public class SplashActivity extends Activity{
         // SplashClickEyeManager.getInstance().setSupportSplashClickEye(false);
         //step3:创建开屏广告请求参数AdSlot,具体参数含义参考文档
         AdSlot adSlot = null;
-        int expressViewWidth = (int)UIUtils.getScreenWidthDp(this);
-        int expressViewHeight = (int)UIUtils.getHeight(this);
+        UIUtils.hideBottomUIMenu(this);
+        int expressViewHeight = (int)(UIUtils.getRealHeight(this) * (mIsHalfSize ? 0.86 : 1));
+        int expressViewWidth = (int)UIUtils.getRealWidth(this);
         if (mIsExpress) {
             //个性化模板广告需要传入期望广告view的宽、高，单位dp，请传入实际需要的大小，
             //比如：广告下方拼接logo、适配刘海屏等，需要考虑实际广告大小
