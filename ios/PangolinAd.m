@@ -97,11 +97,18 @@ RCT_EXPORT_METHOD(showSplashAd:(NSString *)codeId)
 }
 - (void)splashAd:(BUSplashAdView *)splashView didFailWithError:(NSError * _Nullable)error {
     // 返回的错误码(error)表示广告加载失败的原因，所有错误码详情请见链接Link
+    [self splashAdRemoveFromSuperview];
     if (hasListeners) {
         [self sendEventWithName:@"splashEventReminder" body:@{
            @"eventType": @"didFailWithError",
            @"message": error,
          }];
+    }
+}
+-(void)splashAdRemoveFromSuperview {
+    [self.splashAdView removeFromSuperview];
+    if (self.IconView) {
+      [self.IconView removeFromSuperview];
     }
 }
 -(void)splashAdDidClick:(BUSplashAdView *) splashView {
@@ -112,10 +119,7 @@ RCT_EXPORT_METHOD(showSplashAd:(NSString *)codeId)
 }
 - (void)splashAdDidClose:(BUSplashAdView *) splashView {
    // SDK渲染开屏广告关闭回调，当用户点击广告时会直接触发此回调，建议在此回调方法中直接进行广告对象的移除操作
-    [self.splashAdView removeFromSuperview];
-    if (self.IconView) {
-      [self.IconView removeFromSuperview];
-    }
+    [self splashAdRemoveFromSuperview];
     if (hasListeners){
         [self sendEventWithName:@"splashEventReminder" body:@{@"eventType": @"splashAdDidClose"}];
     }
