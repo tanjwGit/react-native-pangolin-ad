@@ -2,19 +2,16 @@ import { NativeModules, NativeEventEmitter, Platform } from "react-native";
 
 const { PangolinAd } = NativeModules;
 
-export type eventType = 'splashAdDidLoad' | 'didFailWithError' | 'splashAdDidClick' | 'splashAdDidClose' | 'splashAdWillClose'
+export type splashEventType = 'splashAdDidLoad' | 'didFailWithError' | 'splashAdDidClick' | 'splashAdDidClose' | 'splashAdWillClose'
     | "splashAdDidCloseOtherController" | "splashAdDidClickSkip" | 'splashAdCountdownToZero';
 
 
-const showSplashAd = (platformCodeId: {
+export const showSplashAd = (platformCodeId: {
   ios: string,
   android: string
 }, listeners?: {[eventType: string]: Function}) => {
   const eventEmitter = new NativeEventEmitter(PangolinAd);
-  eventEmitter.addListener('splashEventReminder')
-
-
-  const _eventEmitter = eventEmitter.addListener('splashEventReminder', ({ eventType }: {eventType: eventType}) => {
+  const _eventEmitter = eventEmitter.addListener('splashEventReminder', ({ eventType }: { eventType: splashEventType }) => {
     const _event = listeners && listeners[eventType];
     if(typeof _event === 'function') {
       _event();
@@ -28,5 +25,3 @@ const showSplashAd = (platformCodeId: {
   PangolinAd.showSplashAd(codeId + '');
  }
 }
-
-export { showSplashAd };
