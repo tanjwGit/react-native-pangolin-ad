@@ -47,18 +47,18 @@ public class PangolinAdModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void showSplashAd(String codeid) {
         final Activity context = getCurrentActivity();
-        ApplicationInfo appInfo = context.getApplicationInfo();
-        int resID = context.getResources().getIdentifier("splash_bottom", "drawable", appInfo.packageName);
-        boolean isHalfSize = false;
-        if (resID > 0) {
-            isHalfSize = true;
-        }
-        Intent intent = new Intent(reactContext, SplashActivity.class);
-        intent.putExtra("splash_rit", codeid);
-        intent.putExtra("is_express", false);
-        intent.putExtra("is_half_size", isHalfSize);
-        intent.putExtra("logo_res_id", resID);
-        if (context != null) {
+        if(context != null) {
+            ApplicationInfo appInfo = context.getApplicationInfo();
+            int resID = context.getResources().getIdentifier("splash_bottom", "drawable", appInfo.packageName);
+            boolean isHalfSize = false;
+            if (resID > 0) {
+                isHalfSize = true;
+            }
+            Intent intent = new Intent(reactContext, SplashActivity.class);
+            intent.putExtra("splash_rit", codeid);
+            intent.putExtra("is_express", false);
+            intent.putExtra("is_half_size", isHalfSize);
+            intent.putExtra("logo_res_id", resID);
             context.startActivity(intent);
         }
     }
