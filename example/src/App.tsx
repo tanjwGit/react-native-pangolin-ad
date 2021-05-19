@@ -9,8 +9,8 @@ export default function App() {
 
 const showSplash = () => {
   showSplashAd({
-    ios: '887340170',
-    android: '887340459',
+    ios: 'xxxxxxxxxxxxx',
+    android: 'xxxxxxxxxxxxx',
   }, {
     splashAdDidLoad: () => {
       console.log('splashAdDidLoad')

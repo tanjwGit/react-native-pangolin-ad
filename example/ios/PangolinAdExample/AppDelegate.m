@@ -49,7 +49,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  [PangolinAd init:@"5082612"];
+  [PangolinAd init:@"xxxxxx"];
   return YES;
 }
 
