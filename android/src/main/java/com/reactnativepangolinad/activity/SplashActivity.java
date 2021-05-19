@@ -280,6 +280,7 @@ public class SplashActivity extends Activity{
         if (mSplashContainer != null) {
             mSplashContainer.removeAllViews();
         }
+        sendEvent("splashAdDidClose");
         this.finish();
     }
 
